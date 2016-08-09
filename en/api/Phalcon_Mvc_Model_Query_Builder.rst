@@ -57,7 +57,7 @@ Returns the DependencyInjector container
 
 
 
-public  **distinct** (*unknown* $distinct)
+public  **distinct** (*bool* $distinct)
 
 Sets SELECT DISTINCT / SELECT ALL flag 
 
@@ -65,8 +65,9 @@ Sets SELECT DISTINCT / SELECT ALL flag
 
     <?php
 
-    $builder->distinct("status");
-    $builder->distinct(null);
+    $builder->distinct(true);  // use the 'DISTINCT' flag
+    $builder->distinct(false); // use the 'ALL' flag
+    $builder->distinct(null);  // use no specific flag, common SQL engines behavior is to default to ALL
 
 
 
